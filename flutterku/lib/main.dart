@@ -20,9 +20,16 @@ class MyApp extends StatelessWidget {
             title: const Text("Row dan Column"),
           ),
           body: Column(
-            children: const [
+            // mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
               // di dalam colum terdiri dari kumpulan widget
-              Text("test 1"), Text("text 2"), Text("text 3")
+              const Text("text 1"), const Text("text 2"), const Text("text 3"),
+              Row(children: const [
+                Text("text 4"),
+                Text("text 5"),
+                Text("text 6")
+              ])
             ],
           )),
     );
