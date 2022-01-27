@@ -12,13 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int number = 0;
-  void tekanTombol() {
-    // refresh tampilan stateful widget
-    setState(() {
-      number = number + 1;
-    });
-  }
+  String message = "ini adalah text";
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +20,21 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Stateful Widget Demo"),
+          title: Text("Anonymous Method"),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                number.toString(),
-                style: TextStyle(fontSize: 10 + number.toDouble()),
-              ),
+              Text(message),
               ElevatedButton(
-                child: const Text("tambah bilangan"),
-                onPressed: tekanTombol,
-              )
+                  onPressed: () {
+                    // ini adalah contoh anonymous method, method yg hanya di panggil di sini saja
+                    setState(() {
+                      message = "Tombol sudah ditekan";
+                    });
+                  },
+                  child: Text("tekan saya"))
             ],
           ),
         ),
