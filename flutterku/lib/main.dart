@@ -15,23 +15,27 @@ class MyApp extends StatelessWidget {
       // yang di dalam nya terdapat widget yang bernama MaterialApp dengan design material,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          // dan tampilan utama adalah widget scaffold (tampilan dasar aplikasi android yang memiliki setidak nya 2 bagian utama, appbar dan body
-          appBar: AppBar(
-            title: const Text("Row dan Column"),
+        // dan tampilan utama adalah widget scaffold
+        appBar: AppBar(
+          title: const Text("Container"),
+        ),
+        body: Container(
+          color: Colors.red,
+          margin: const EdgeInsets.fromLTRB(10, 15, 10, 25),
+          // margin adalah jarak antara container dengan widget lain nya yang berada di luar container
+          padding: const EdgeInsets.only(bottom: 20),
+          // padding adalah jarak dari sisi container ke widget yang ada di dalam container
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[Colors.amber, Colors.blue])),
           ),
-          body: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // di dalam colum terdiri dari kumpulan widget
-              const Text("text 1"), const Text("text 2"), const Text("text 3"),
-              Row(children: const [
-                Text("text 4"),
-                Text("text 5"),
-                Text("text 6")
-              ])
-            ],
-          )),
+        ),
+      ),
     );
   }
 }
