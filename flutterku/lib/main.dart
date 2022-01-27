@@ -15,25 +15,16 @@ class MyApp extends StatelessWidget {
       // yang di dalam nya terdapat widget yang bernama MaterialApp dengan design material,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // dan tampilan utama adalah widget scaffold (tampilan dasar aplikasi android yang memiliki setidak nya 2 bagian utama, appbar dan body, appbar memiliki property title yang di isi dengan widget Text yang akan menampilkan sebuah string)
-        appBar: AppBar(
-          title: const Text("ini appbar"),
-        ),
-        body: Center(
-            child: Container(
-                color: Colors.lightBlue,
-                width: 150,
-                height: 100,
-                child: const Text(
-                  "kembali mencoba belajar flutter agar terus terbiasa",
-                  // textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w300,
-                      fontSize: 20),
-                ))),
-      ),
+          // dan tampilan utama adalah widget scaffold (tampilan dasar aplikasi android yang memiliki setidak nya 2 bagian utama, appbar dan body
+          appBar: AppBar(
+            title: const Text("Row dan Column"),
+          ),
+          body: Column(
+            children: const [
+              // di dalam colum terdiri dari kumpulan widget
+              Text("test 1"), Text("text 2"), Text("text 3")
+            ],
+          )),
     );
   }
 }
