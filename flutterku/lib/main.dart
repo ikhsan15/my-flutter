@@ -23,12 +23,15 @@ class MyApp extends StatelessWidget {
             child: Container(
                 color: Colors.lightBlue,
                 width: 150,
-                height: 50,
+                height: 100,
                 child: const Text(
                   "kembali mencoba belajar flutter agar terus terbiasa",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  // text terpotong akan ditampilkan dengan tanda titik3
+                  // textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20),
                 ))),
       ),
     );
