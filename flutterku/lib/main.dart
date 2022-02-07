@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,19 +16,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // new widget
-  List<Widget> widgets = [];
-  int counter = 1;
-
-  // // new constructor
-  // _MyAppState() {
-  //   for (int i = 0; i < 20; i++) {
-  //     widgets.add(Text(
-  //       "data ke " + i.toString(),
-  //       style: const TextStyle(fontSize: 40),
-  //     ));
-  //   }
-  // }
+  Random random = Random();
 
   @override
   Widget build(BuildContext context) {
@@ -34,38 +24,26 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("latihan listview"),
+          title: Text("latihan animated container"),
         ),
-        body: ListView(children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      widgets.add(Text(
-                        "data ke " + counter.toString(),
-                        style: const TextStyle(fontSize: 40),
-                      ));
-                      counter++;
-                    });
-                  },
-                  child: const Text("tambah data")),
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      widgets.removeLast();
-                      counter--;
-                    });
-                  },
-                  child: const Text("hapus data")),
-            ],
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              setState(() {});
+            },
+            child: AnimatedContainer(
+              color: Color.fromARGB(
+                255,
+                random.nextInt(256),
+                random.nextInt(256),
+                random.nextInt(256),
+              ),
+              duration: Duration(seconds: 1),
+              width: 50.0 + random.nextInt(101),
+              height: 50.0 + random.nextInt(101),
+            ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: widgets,
-          )
-        ]),
+        ),
       ),
     );
   }
