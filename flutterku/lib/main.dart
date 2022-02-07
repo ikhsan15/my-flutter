@@ -1,22 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Random random = Random();
 
   @override
   Widget build(BuildContext context) {
@@ -24,25 +15,52 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("latihan animated container"),
+          title: const Text("flexsible widget"),
         ),
-        body: Center(
-          child: GestureDetector(
-            onTap: () {
-              setState(() {});
-            },
-            child: AnimatedContainer(
-              color: Color.fromARGB(
-                255,
-                random.nextInt(256),
-                random.nextInt(256),
-                random.nextInt(256),
+        body: Column(
+          children: [
+            Flexible(
+              child: Row(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.red,
+                      margin: const EdgeInsets.all(5),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.green,
+                      margin: const EdgeInsets.all(5),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: Container(
+                      color: Colors.purple,
+                      margin: const EdgeInsets.all(5),
+                    ),
+                  ),
+                ],
               ),
-              duration: Duration(seconds: 1),
-              width: 50.0 + random.nextInt(101),
-              height: 50.0 + random.nextInt(101),
             ),
-          ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                color: Colors.amber,
+                margin: const EdgeInsets.all(5),
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Container(
+                color: Colors.blue,
+                margin: const EdgeInsets.all(5),
+              ),
+            ),
+          ],
         ),
       ),
     );
