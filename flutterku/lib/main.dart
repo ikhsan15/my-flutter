@@ -15,49 +15,139 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("flexsible widget"),
+          title: const Text("latihan stack dan align"),
         ),
-        body: Column(
+        body: Stack(
           children: [
-            Flexible(
-              child: Row(
-                children: [
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.red,
-                      margin: const EdgeInsets.all(5),
-                    ),
+            //background
+            Column(
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.black12,
+                        ),
+                      ),
+                    ],
                   ),
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.green,
-                      margin: const EdgeInsets.all(5),
-                    ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: [
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.black12,
+                        ),
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.purple,
-                      margin: const EdgeInsets.all(5),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Flexible(
-              flex: 2,
-              child: Container(
-                color: Colors.amber,
-                margin: const EdgeInsets.all(5),
-              ),
+            // listview
+            ListView(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "ini adalah text yang ada di lapisan tengah dari stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            Flexible(
-              flex: 1,
-              child: Container(
-                color: Colors.blue,
-                margin: const EdgeInsets.all(5),
+            // button
+            Align(
+              // alignment: Alignment.bottomCenter,
+              alignment: Alignment(0.7, 0.95),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text("my button"),
               ),
             ),
           ],
